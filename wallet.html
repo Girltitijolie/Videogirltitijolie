@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wallet VideoBonus</title>
+  <style>
+    body{
+      margin:0;
+      background:#000;
+      color:#FCE3EE;
+      font-family:Arial,sans-serif;
+      padding:20px;
+    }
+    .card{
+      background:#111;
+      border:2px solid #FF5FA2;
+      border-radius:24px;
+      padding:20px;
+      max-width:420px;
+      margin:20px auto;
+      box-shadow:0 0 18px rgba(255,95,162,.22);
+    }
+    h1{
+      text-align:center;
+      font-size:36px;
+      margin:10px 0 20px;
+    }
+    .label{
+      font-size:18px;
+      opacity:.95;
+      margin-top:8px;
+    }
+    .points{
+      font-size:42px;
+      font-weight:700;
+      color:#00FF6A;
+      margin:8px 0 14px;
+    }
+    .euros{
+      font-size:28px;
+      font-weight:700;
+      color:#F3B24A;
+      margin:6px 0 20px;
+    }
+    .row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+    button, a.btn{
+      flex:1 1 180px;
+      border:none;
+      border-radius:18px;
+      padding:16px 18px;
+      font-size:22px;
+      font-weight:700;
+      text-align:center;
+      text-decoration:none;
+      cursor:pointer;
+    }
+    .btn-history{
+      background:#FF5FA2;
+      color:#000;
+    }
+    .btn-paypal{
+      background:#F3B24A;
+      color:#000;
+    }
+    .btn-paypal[disabled]{
+      opacity:.45;
+      cursor:not-allowed;
+    }
+    .hint{
+      margin-top:16px;
+      font-size:16px;
+      line-height:1.5;
+    }
+    .status{
+      margin-top:16px;
+      font-size:16px;
+      color:#FCE3EE;
+      min-height:24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Wallet</h1>
+
+    <div class="label">Solde actuel</div>
+    <div class="points" id="pointsValue">0 point</div>
+
+    <div class="label">Équivalent retrait</div>
+    <div class="euros" id="eurosValue">0,00 €</div>
+
+    <div class="row">
+      <a class="btn btn-history" href="history.html">Historique</a>
+      <button class="btn-paypal" id="withdrawBtn">Retrait PayPal</button>
+    </div>
+
+    <div class="hint" id="rulesText">
+      Conversion : 1000 points = 1,00 €<br>
+      Seuil minimum de retrait : 5,00 €
+    </div>
+
+    <div class="status" id="statusMsg"></div>
+  </div>
+
+  <script src="wallet.js"></script>
+</body>
+</html>
